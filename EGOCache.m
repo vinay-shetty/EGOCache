@@ -127,6 +127,13 @@ static EGOCache* __instance;
 	[self saveCacheDictionary];
 }
 
+- (void)updateTimeoutInterval: (NSTimeInterval) timeoutInterval forKey:(NSString*) key{
+    CHECK_FOR_EGOCACHE_PLIST();
+
+    [cacheDictionary setObject:[NSDate dateWithTimeIntervalSinceNow:timeoutInterval] forKey:key];
+    [self saveCacheDictionary];
+}
+
 - (void)removeItemFromCache:(NSString*)key {
 	NSString* cachePath = cachePathForKey(key);
 	

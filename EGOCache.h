@@ -40,6 +40,7 @@
 - (void)removeCacheForKey:(NSString*)key;
 
 - (BOOL)hasCacheForKey:(NSString*)key;
+- (void)updateTimeoutInterval: (NSTimeInterval) timeoutInterval forKey:(NSString*)key;
 
 - (NSData*)dataForKey:(NSString*)key;
 - (void)setData:(NSData*)data forKey:(NSString*)key;
